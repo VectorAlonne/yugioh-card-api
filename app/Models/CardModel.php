@@ -12,11 +12,14 @@ class CardModel extends Model
     protected $table = 'cards';
 
     protected $fillable = [
+        'cardType',
         'attribute',
         'name',
-        'level/rank',
+        'level',
+        'rank',
         'image',
         'type',
+        'subType',
         'description',
         'stats',
         'code'

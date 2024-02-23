@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
+            $table ->string('cardType');
             $table ->string('attribute');
             $table ->string('name');
-            $table ->string('level/rank');
+            $table ->string('level');
+            $table ->string('rank');
             $table ->string('image');
             $table ->string('type');
+            $table ->string('subType');
             $table ->string('description');
             $table ->string('stats');
             $table ->string('code');

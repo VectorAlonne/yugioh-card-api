@@ -40,11 +40,14 @@ class CardController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
+            'cardType' => 'required|string',
             'attribute' => 'required|string',
             'name' => 'required|string',
-            'level/rank' => 'required|string',
+            'level' => 'required|string',
+            'rank' => 'required|string',
             'image' => 'required|url',
             'type' => 'required|string',
+            'subType' => 'required|string',
             'description' => 'required|string',
             'stats' => 'required|string',
             'code' => 'required|string',
@@ -57,11 +60,14 @@ class CardController extends Controller
             ], 422);
         }else{
             $card = CardModel::create([
+                'cardType' => $request->input('cardType'),
                 'attribute' => $request->input('attribute'),
                 'name' => $request->input('name'),
-                'level/rank' => $request->input('level/rank'),
+                'level' => $request->input('level'),
+                'rank' => $request->input('rank'),
                 'image' => $request->input('image'),
                 'type' => $request->input('type'),
+                'subType' => $request->input('subType'),
                 'description' => $request->input('description'),
                 'stats' => $request->input('stats'),
                 'code' => $request->input('code'),
